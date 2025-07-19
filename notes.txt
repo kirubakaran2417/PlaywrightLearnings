@@ -1,0 +1,18 @@
+Test script(the file where you write steps like click, fill etc)
+playwright API(The engine that translates the steps into code)
+playwright core(protocol layer that communicates with the browser)
+websocket communication(The underlying mechanism for communication between Playwright and the browser)
+Browser(The browser where the test is executed)
+
+key concepts in playwright:
+Browser->Context->Page
+Browser: Represents the browser instance (e.g., Chromium, Firefox, WebKit).
+Context: Represents a single browser context, which can contain multiple pages. It allows for isolated sessions (e.g., cookies, local storage).
+Page: Represents a single tab in the browser. It is where the actual interactions with the web application occur.
+
+page.locator(selector): This method is used to find an element on the page using a CSS selector or xpath . It returns a Locator object that can be used to interact with the element.
+getByText(text): This method is used to find an element based on its text content. It returns a Locator object that can be used to interact with the element.
+getByRole(role, options): This method is used to find an element based on its ARIA role. It returns a Locator object that can be used to interact with the element. The options parameter can include additional filters like name, checked, etc.
+getByLabel(label): This method is used to find an element based on its label text.
+nth(index): This method is used to select the nth element from a list of elements. It is often used in conjunction with other locator methods to specify which element to interact with when there are multiple matches.
+chained locators: Playwright allows you to chain locators to narrow down the search for elements. For example, you can use page.locator('parent-selector').locator('child-selector') to find a child element within a specific parent element.
